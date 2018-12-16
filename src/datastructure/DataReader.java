@@ -1,25 +1,42 @@
 package datastructure;
 
-public class DataReader {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+
+public class UseArrayList {
 
 	public static void main(String[] args) {
 		/*
-		 * User API to read the below textFile and print to console.
-		 * Use BufferedReader class. 
-		 * Use try....catch block to handle Exception.
+		 * Demonstrate how to use ArrayList that includes add,peek,remove,retrieve elements.
+		 * Use For Each loop and while loop with Iterator to retrieve data.
+		 * Store all the sorted data into one of the databases.
 		 *
-		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
-		 *
-		 * After reading from file using BufferedReader API, store each word into Stack and LinkedList. So each word
-		 * should construct a node in LinkedList.Then iterate/traverse through the list to retrieve as FIFO
-		 * order from LinkedList and retrieve as FILO order from Stack.
-		 *
-		 * Demonstrate how to use Stack that includes push,peek,search,pop elements.
-		 * Use For Each loop/while loop/Iterator to retrieve data.
 		 */
+		ArrayList<String> car = new ArrayList<String>();
+		car.add("Blue");
+		car.add("AC");
+		car.add("ABS");
+		car.add("Turbo");
 
-		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+		System.out.println("car features = " + car);
 
+		for (int a = 1; a < 3; a++) {
+			System.out.println("features on index 1 and 2 = " + car.get(a));
+		}
+		//connect to db
+
+		Iterator<String> iterator = car.iterator();
+		System.out.println(iterator.next());
+		System.out.println(iterator.hasNext());
+
+		while (iterator.hasNext())
+			System.out.println("from while loop = " + iterator.next());
+
+		for (Object x : car) {
+			System.out.println(x);
+		}
 
 
 	}
